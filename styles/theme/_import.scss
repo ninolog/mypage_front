@@ -1,0 +1,15 @@
+//----------------------------------------------------
+// theme: Import
+//----------------------------------------------------
+@import "module/_config.scss";
+@import "module/_mixin.scss";
+
+@import "module/_common.scss";
+@import "module/_header.scss";
+@import "module/_footer.scss";
+
+@import "pages/_top.scss";
+@import "pages/_about.scss";
+@import "pages/_blog.scss"; 
+@import "pages/_contact.scss";
+@import "pages/_works.scss";

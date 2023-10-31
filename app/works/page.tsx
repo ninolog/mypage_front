@@ -1,7 +1,7 @@
 import React from 'react';
-import Layout from './components/Layout';
+import Layout from '../components/Layout';
 
-const MyPage = () => {
+const Works = () => {
   return (
     <Layout>
       <div>ここがページの内容</div>
@@ -9,4 +9,4 @@ const MyPage = () => {
   );
 };
 
-export default MyPage;
+export default Works;

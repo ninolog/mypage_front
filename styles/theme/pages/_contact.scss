@@ -1,0 +1,127 @@
+//----------------------------------------------------
+// Contact
+//----------------------------------------------------
+.contact-area {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  background-color: $white-bg;
+  border-radius: 4px;
+  padding: 70px 20px;
+  .contact_txt-box {
+    margin-bottom: 30px;
+    text-align: center;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      &:before {
+        content: '/*';
+        margin-right: 20px;
+      }
+      &::after {
+        content: '*/';
+        margin-left: 20px;
+      }
+    }
+    p {
+      margin-top: 50px;
+      line-height: 2;
+    }
+  }
+  .contact-form {
+    width: 90%;
+    margin: 70px auto 0;
+    .form-item {
+      display: flex;
+      margin-bottom: 20px;
+      label {
+        width: 7rem;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 50px;
+        padding: 15px 0;
+      }
+      input,textarea {
+        flex: 1;
+        width: 100%;
+        padding: 15px;
+        border: 1px solid $main-color;
+        border-radius: 4px;
+      }
+      p {
+        flex: 1;
+        width: 100%;
+        padding: 13px 0 15px;
+      }
+      input::placeholder,textarea::placeholder {
+        color: $main-color;
+        opacity: 0.5;
+      }
+      &._submit {
+        width: 300px;
+        font-weight: bold;
+        text-align: center;
+        margin: 100px auto 0;
+        input {
+          transition: all 0.3s ease;
+          &:hover {
+            color: $white-color;
+            background-color: $main-color;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+      &._confirm-submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        text-align: center;
+        margin: 100px auto 0;
+        a {
+          max-width: 300px;
+          width: 300px;
+          padding: 15px;
+          border: 1px solid $main-color;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+          &:hover {
+            color: $white-color;
+            background-color: $main-color;
+            transition: all 0.3s ease;
+          }
+        }
+        input {
+          max-width: 300px;
+          width: 300px;
+          margin-left: 4%;
+          transition: all 0.3s ease;
+          &:hover {
+            color: $white-color;
+            background-color: $main-color;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    } // end form-item
+  } // end contact-form
+} // end contact-area
+
+.contact_main-section .back-btn {
+  margin: 70px auto 0;
+  text-align: center;
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid $main-color;
+    font-size: 14px;
+    font-weight: bold;
+    color: $main-color;
+    transition: .3s ease all;
+    &:hover {
+      background-color: $main-color;
+      color: $white-bg;
+      transition: .3s ease all;
+    }
+  }
+} // end back-btn

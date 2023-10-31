@@ -1,0 +1,123 @@
+//----------------------------------------------------
+// About
+//----------------------------------------------------
+.about_main-section {
+  .profile-area {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @include mq(sp) { 
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .image-area {
+        max-width: 220px;
+        max-height: 220px;
+        width: calc( 220 / 1100 * 100vw );
+        height: calc( 220 / 1100 * 100vw );
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid $main-color;
+        @include mq(sp) { 
+          width: 220px;
+          height: 220px;
+        }
+      }
+      .image-description {
+        margin-top: 20px;
+        text-align: center;
+        p > span {
+          display: block;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      .sns-area {
+        display: flex;
+        margin-top: 30px;
+        a {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          margin: 0 10px;
+          position: relative;
+          top: 0;
+          transition: all 0.3s ease;
+          &:hover {
+            top: -5px;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+    .txt-wrap {
+      margin-left: 100px;
+      @include mq(sp) { 
+        margin-left: 0;
+        margin-top: 70px;
+      }
+      .txt-area {
+        margin-bottom: 20px;
+        @include mq(sp) { 
+          text-align: center;
+          margin-bottom: 50px;
+        }
+      }
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        &:before {
+          content: '/*';
+          margin-right: 20px;
+        }
+        &::after {
+          content: '*/';
+          margin-left: 20px;
+        }
+      }
+      p {
+        margin-bottom: 30px;
+      }
+      dl {
+        margin-bottom: 10px;
+        @include mq(sp) { 
+          margin-bottom: 20px;
+        }
+        dt {
+          font-size: 14px;
+          font-weight: bold;
+          @include mq(sp) { 
+            font-size: min(14px,calc( 14 / 375 * 100vw ));
+          }
+          &:before {
+            content: '{--';
+            margin-right: 5px;
+          }
+          &::after {
+            content: '--}';
+            margin-left: 5px;
+          }
+        }
+        dd {
+          margin: 10px 0;
+          font-size: 14px;
+          @include mq(sp) { 
+            font-size: min(14px,calc( 14 / 375 * 100vw ));
+            margin: 15px 0;
+          }
+          &:before {
+            content: '//';
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

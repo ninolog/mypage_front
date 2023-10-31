@@ -1,0 +1,14 @@
+//----------------------------------------------------
+// footer
+//----------------------------------------------------
+.footer {
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  @include mq(sp) { 
+    margin-top: 70px;
+  }
+  .copy-right {
+    font-size: 12px;
+  }
+}

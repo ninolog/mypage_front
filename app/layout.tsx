@@ -1,16 +1,20 @@
+// 共通レイアウト
+
+// ライブラリの読み込み
 import React from 'react';
 
 import '../styles/style.scss'
 import type { Metadata } from 'next'
-import { Yomogi } from 'next/font/google'
 import Favicon from '../public/images/common/favicon.ico';
 
+// メタデータ
 export const metadata: Metadata = {
   title: 'Ninolog',
   description: 'とあるエンジニアのほのぼの日常',
   icons: [{ rel: 'icon', url: Favicon.src }],
 }
 
+// レイアウト
 export default function RootLayout({
   children,
 }: {

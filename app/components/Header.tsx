@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
   const current_slug = usePathname();
-  console.log(current_slug);
 
   return (
     <header className="header">

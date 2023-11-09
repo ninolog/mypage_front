@@ -194,9 +194,9 @@ $pm: #dada00;
 }
 
 .pagination {
-  position: relative;
   display: flex;
   flex-direction: row;
+  position: relative;
 
   li {
     width: $ddim;

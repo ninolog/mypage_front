@@ -1,16 +1,19 @@
+// 共通レイアウト
 'use client';
 
-import React, { useState, MouseEvent } from 'react';
+// ライブラリの読み込み
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
+// 型定義
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-
+// レイアウトの内容
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  
+
   return (
     <div id="wrapper">
       <div className="site-wrap">
@@ -37,11 +40,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div> {/* title-area */}
             </div> {/* top_main-wrapper */}
             {children}
-            <Footer />
-            <div className="top_btn">
-              <a href="#page_top"><img src="/images/common/page_top.png" alt="ページトップへ" /></a>
-            </div>{ /* top_btn */}
           </div>{ /* right-area_inner */}
+          <Footer />
+          <div className="top_btn">
+            <a href="#page_top"><img src="/images/common/page_top.png" alt="ページトップへ" /></a>
+          </div>{ /* top_btn */}
         </div>{ /* site_right-area */}
       </div>{ /* site-wrap */}
     </div>

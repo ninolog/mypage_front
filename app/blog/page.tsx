@@ -19,21 +19,37 @@ type Image = {
   url: string;
 };
 type Category = {
+  id: number;
+  name: string;
+};
+
+type CategoryItem = {
+  id: number;
   name: string;
 };
 
 const Blog = () => {
 
-  // ここでblogItemsの型を指定
+  // ここで型を指定
   const [blogItems, setBlogItems] = useState<BlogItem[]>([]);
+  const [categories, setCategories] = useState<CategoryItem[]>([]);
 
   // APIからデータを取得する処理
   useEffect(() => {
-    client.get({ endpoint: "blogs" })
+    client.get({ endpoint: "blogs" }) // エンドポイントを指定
       .then(data => {
         setBlogItems(data.contents);
       });
+    client.get({ endpoint: "categories" }) // エンドポイントを指定
+      .then(data => {
+        setCategories(data.contents);
+      });
   }, []);
+
+  // カテゴリーごとの記事数を数える処理
+  const countArticlesInCategory = (categoryName: string) => {
+    return blogItems.filter(item => item.category && item.category.name === categoryName).length;
+  };
 
   // レイアウトの内容
   return (
@@ -47,27 +63,36 @@ const Blog = () => {
             <div className="category-area">
               <ul className="category-list">
                 <li className="category-item"><a href="/blog/">All</a></li>
-                <li className="category-item"><a href="/blog/category1/">Category1</a></li>
-                <li className="category-item"><a href="/blog/category2/">Category2</a></li>
-                <li className="category-item"><a href="/blog/category3/">Category3</a></li>
+                {categories.map((category) => (
+                  // カテゴリーに所属する記事がある場合のみ表示
+                  countArticlesInCategory(category.name) > 0 && (
+                    <li className="category-item" key={category.id}>
+                      <a href={`/blog/category/${category.id}/`}>{category.name}</a>
+                    </li>
+                  )
+                ))}
               </ul>
             </div>
             <div className="blog-list">
               {blogItems.map((item: BlogItem) => (
                 <div className="blog-item" key={item.id}>
-                  <a href={`/blog/detail/${item.id}`}>
+                  <a href={`/blog/${item.id}`}>
                     <div className="blog-item_img">
-                      <img src={item.image.url} alt="" />
+                      {item.image ? (
+                        <img src={item.image.url} alt="" />
+                      ) : (
+                        <img src="/images/common/title_bg_01.png" alt="" />
+                      )}
                     </div>
                   </a>
                   <div className="blog-item_txt">
-                    <a href={`/blog/detail/${item.id}`}>
+                    <a href={`/blog/${item.id}`}>
                       <p className="blog-item_date">{formatDate(item.publishedAt)}</p>
                       <h3 className="blog-item_title">{item.title}</h3>
                     </a>
                     <ul className="blog-item_category">
                       <li className="category-item">
-                        <a href="">{item.category.name}</a>
+                        <a href={`/blog/category/${item.category.id}/`}>{item.category.name}</a>
                       </li>
                     </ul>
                   </div> 

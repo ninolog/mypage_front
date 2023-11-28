@@ -4,6 +4,7 @@
 import React from 'react';
 
 import '../styles/style.scss'
+import 'highlight.js/styles/atom-one-dark.css';
 import type { Metadata } from 'next'
 import Favicon from '../public/images/common/favicon.ico';
 

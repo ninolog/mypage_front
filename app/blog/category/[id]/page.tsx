@@ -1,8 +1,8 @@
 // ブログのカテゴリー別ページ
 import React from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../../../components/Layout';
 
-const Blog = () => {
+const BlogCategory = () => {
   return (
     <Layout>
       <div>ここがページの内容</div>
@@ -10,4 +10,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogCategory;

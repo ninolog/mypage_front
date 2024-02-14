@@ -62,7 +62,7 @@ const Blog = () => {
           <div className="blog-wrap">
             <div className="category-area">
               <ul className="category-list">
-                <li className="category-item"><a href="/blog/">All</a></li>
+                <li className="category-item active"><a href="/blog/">All</a></li>
                 {categories.map((category) => (
                   // カテゴリーに所属する記事がある場合のみ表示
                   countArticlesInCategory(category.name) > 0 && (
